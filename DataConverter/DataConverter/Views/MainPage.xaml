@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            xmlns:views="clr-namespace:DataConverter.Views"
+            x:Class="DataConverter.Views.MainPage"
+            UnselectedTabColor="White"
+            SelectedTabColor="Red"
+            BarBackgroundColor="#393A38"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSmoothScrollEnabled="True"
+            android:TabbedPage.IsSwipePagingEnabled="True"
+            >
+
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#1D1E1F</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+                <Setter Property="BackgroundColor"  Value="{StaticResource NavigationPrimary}" />
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+
+    <TabbedPage.Children>
+        <NavigationPage Title="FloatToByte">
+            <x:Arguments>
+                <views:FloatToBytePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="ByteToFloat">
+            <x:Arguments>
+                <views:ByteToFloatPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+
+</TabbedPage>
